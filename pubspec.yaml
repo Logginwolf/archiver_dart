@@ -1,5 +1,7 @@
 name: logginwolf_archiver
 description: Retrive and generate archive file of Logginwolf data in Dart or Flutter platform.
+documentation: https://logginwolf.rk0cc.xyz/docs/archive.html
+repository: https://github.com/Logginwolf/archiver_dart
 environment: 
   sdk: ^3.7.0
 dependencies:
