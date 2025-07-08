@@ -1,0 +1,10 @@
+name: logginwolf_archiver
+description: Retrive and generate archive file of Logginwolf data in Dart or Flutter platform.
+environment: 
+  sdk: ^3.7.0
+dependencies:
+  csv: ^6.0.0
+  archive: ^4.0.7
+  sqflite_common: ^2.5.5
+  path: ^1.8.2
+  path_provider: ^2.1.5
