@@ -1,51 +1,19 @@
-sealed class AbstractId {
-  const AbstractId._();
-
-  int? get value;
-
-  @override
-  String toString();
-}
-
-final class Id implements AbstractId, Comparable<Id> {
-  @override
-  final int value;
-
-  Id(this.value) {
-    if (value <= 0) {
-      throw RangeError.range(
-        value,
-        1,
-        null,
-        "value",
-        "ID value must be positive integer.",
-      );
+extension type Id._(int _value) {
+  factory Id(int value) {
+    if (value < 1) {
+      throw RangeError("Id value must be positive integer.");
     }
+
+    return Id._(value);
   }
 
-  @override
-  int get hashCode => value;
+  bool operator <(Id id) => this._value < id._value;
 
-  @override
-  int compareTo(Id other) => value.compareTo(other.value);
+  bool operator >(Id id) => this._value > id._value;
 
-  @override
-  String toString() {
-    return "$value";
-  }
-}
+  bool operator <=(Id id) => this._value <= id._value;
 
-final class AutoId implements AbstractId {
-  @override
-  final int? value = null;
+  bool operator >=(Id id) => this._value >= id._value;
 
-  const AutoId();
-
-  @override
-  int get hashCode => -1;
-
-  @override
-  String toString() {
-    return "(Auto ID)";
-  }
+  int compareTo(Id id) => this._value.compareTo(id._value);
 }
